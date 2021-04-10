@@ -1,0 +1,66 @@
+:root {
+    --main-color: rgba(69, 69, 179, 0.795);
+    --secondary-color: rgba(101, 101, 241, 0.808);
+}
+
+#wind-turbine {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#wind-turbine-body {
+    width: 20px; 
+    height: 0px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 400px solid var(--secondary-color);
+}
+
+#wind-turbine-head {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background: var(--main-color);
+    border-radius: 50%;
+    margin-bottom: -20px;
+    z-index: 5;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: center center;
+}
+
+div[class*="turbine"]{
+    transform-origin: bottom center;
+    height: 0;
+    width: 0;
+    width: 0; 
+    height: 0; 
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 295px solid var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+}
+
+.turbine-1{
+    bottom: -200px;
+    left: 160px;
+}
+
+.turbine-2 {
+    bottom: -200px;
+    left: -110px;
+}
+
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
